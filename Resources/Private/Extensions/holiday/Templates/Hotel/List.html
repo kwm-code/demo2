@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+
+	<f:section name="content">
+		<h1>Listing for Hotel</h1>
+
+		<f:flashMessages />
+<f:debug>{_all}</f:debug>
+		<table  class="tx_holiday" >
+			<tr>
+				<th><f:translate key="tx_holiday_domain_model_hotel.title" /></th>
+				<th> </th>
+				<th> </th>
+			</tr>
+
+			<f:for each="{hotels}" as="hotel">
+				<tr>
+					<td><f:link.action action="show" arguments="{hotel : hotel}"> {hotel.title}</f:link.action></td>
+                    <td>{hotel.rating}</td>
+                    <td></td>
+				</tr>
+			</f:for>
+		</table>
+
+		<f:link.action action="new">New Hotel</f:link.action>
+	</f:section>
+</html>

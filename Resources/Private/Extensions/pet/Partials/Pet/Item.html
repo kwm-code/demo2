@@ -1,0 +1,14 @@
+<f:section name="simple">
+    <h3>{pet.name}</h3>
+    <p class="lead">{pet.teaser}</p>
+    <f:render section="media" arguments="{media:pet.media}"/>
+
+    <f:link.action action="show" arguments="{pet:pet}" class="btn btn-primary">hier mehr</f:link.action>
+</f:section>
+
+<f:section name="media">
+    <f:if condition="{media}">
+        <f:media file="{media.0}" width="300"/>
+    </f:if>
+
+</f:section>

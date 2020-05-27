@@ -1,0 +1,85 @@
+{
+    "tt_content": {
+        "elements": {
+            "teaser": {
+                "color": "#be4b66",
+                "columns": [
+                    "header",
+                    "subheader",
+                    "tx_mask_cta_link",
+                    "tx_mask_cta_label"
+                ],
+                "description": "A small teaser",
+                "icon": "fa-bookmark",
+                "key": "teaser",
+                "label": "Teaser Element",
+                "labels": [
+                    "Header",
+                    "Subheader",
+                    "CTA Link",
+                    "CTA Label"
+                ],
+                "shortLabel": "Teaser"
+            }
+        },
+        "sql": {
+            "tx_mask_cta_label": {
+                "tt_content": {
+                    "tx_mask_cta_label": "tinytext"
+                }
+            },
+            "tx_mask_cta_link": {
+                "tt_content": {
+                    "tx_mask_cta_link": "tinytext"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_cta_label": {
+                "config": {
+                    "default": "",
+                    "eval": "",
+                    "is_in": "",
+                    "max": "",
+                    "placeholder": "",
+                    "size": "",
+                    "type": "input"
+                },
+                "exclude": "1",
+                "key": "cta_label",
+                "l10n_mode": ""
+            },
+            "tx_mask_cta_link": {
+                "config": {
+                    "default": "",
+                    "eval": "",
+                    "fieldControl": {
+                        "linkPopup": {
+                            "options": {
+                                "blindLinkOptions": "",
+                                "title": "Link",
+                                "windowOpenParameters": "height=800,width=600,status=0,menubar=0,scrollbars=1"
+                            }
+                        }
+                    },
+                    "placeholder": "",
+                    "renderType": "inputLink",
+                    "size": "",
+                    "softref": "typolink",
+                    "type": "input",
+                    "wizards": {
+                        "link": {
+                            "icon": "actions-wizard-link",
+                            "params": {
+                                "allowedExtensions": ""
+                            }
+                        }
+                    }
+                },
+                "exclude": "1",
+                "key": "cta_link",
+                "l10n_mode": ""
+            }
+        }
+    }
+}
