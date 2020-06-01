@@ -1,14 +1,25 @@
 <f:section name="simple">
-    <h3>{pet.name}</h3>
-    <p class="lead">{pet.teaser}</p>
-    <f:render section="media" arguments="{media:pet.media}"/>
+    <f:link.action action="show" arguments="{pet:pet}" > <h3>{pet.name}</h3></f:link.action>
 
-    <f:link.action action="show" arguments="{pet:pet}" class="btn btn-primary">hier mehr</f:link.action>
+    <table class="table table-sm table-bordered table-striped table-hover">
+        <tr>
+            <th>Gewicht</th>
+            <td>{pet.weight}</td>
+        </tr>
+        <tr>
+            <th>Cuteness</th>
+            <td>{pet.cuteness}</td>
+        </tr>
+        <tr>
+            <th>Easy to handle</th>
+            <td>{f:if(condition:pet.easyToHandle,then:'ja',else:'nein')}</td>
+        </tr>
+    </table>
+
 </f:section>
 
 <f:section name="media">
     <f:if condition="{media}">
-        <f:media file="{media.0}" width="300"/>
+        <f:media file="{media.0}" width="200"/>
     </f:if>
-
 </f:section>

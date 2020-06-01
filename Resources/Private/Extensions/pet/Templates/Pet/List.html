@@ -2,15 +2,25 @@
 	<f:layout name="Default" />
 
 	<f:section name="content">
-        <h1>Haustiere</h1>
-        <div class="row">
 
-            <f:for each="{pets}" as="pet">
-                <div class="col-md-3">
-                    <f:render partial="Pet/Item" arguments="{pet:pet}" section="simple" />
+        <f:if condition="{pets}">
+
+            <f:then>
+                <h1>Haustiere</h1>
+                <div class="row">
+
+                    <f:for each="{pets}" as="pet">
+                        <div class="col-md-3">
+                            <f:render partial="Pet/Item" arguments="{pet:pet}" section="simple" />
+                        </div>
+                    </f:for>
                 </div>
-            </f:for>
-        </div>
+
+            </f:then>
+            <f:else>
+                <div class="alert alert-danger">Keine Tiere da</div>
+            </f:else>
+        </f:if>
 
 	</f:section>
 </html>
