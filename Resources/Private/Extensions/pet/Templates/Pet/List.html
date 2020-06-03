@@ -3,6 +3,35 @@
 
 	<f:section name="content">
 
+        <h2>Filter (Frontend)</h2>
+        <ul>
+
+            <f:for each="{petTypes}" as="petType">
+                <li>
+                    <f:if condition="{petType.uid} == {filter.petType}">
+                        <f:then>
+                            <strong>
+                                <f:link.action action="list" arguments="{extraFilter:{petType:petType}}">{petType.name}</f:link.action>
+                </strong>
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="list" arguments="{petType:petType}">{petType.name}</f:link.action>
+                        </f:else>
+                    </f:if>
+                       </f:for>
+        </ul>
+
+        <ul>
+            <li>
+                <f:link.action addQueryString="GET" action="list" arguments="{extraFilter:{rating:5}}">5 Sterne</f:link.action>
+
+
+
+            </li>
+
+            <f:link.page class="btn btn-default">Reset</f:link.page>
+        </ul>
+
         <f:if condition="{pets}">
 
             <f:then>
